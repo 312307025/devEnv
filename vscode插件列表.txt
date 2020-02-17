@@ -1,0 +1,9 @@
+普通模式
+Bracket Pair Colorizer 1.x 给括号不同层级带不同颜色
+ESLint 2.x
+Highlight Matching Tag 0.9x 高亮选中的tag的结尾tag
+Live Server 5.6x 可以快速启动本地服务器访问html
+Prettier 1.12 格式化工具
+vetur 0.23 vue使用工具
+vscode-icons 文件图标
+vscode-pdf 打开pdf文件
