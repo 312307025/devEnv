@@ -3,59 +3,43 @@
   "workbench.iconTheme": "vscode-icons",
   "editor.fontSize": 14, // 设置文字大小
   "editor.wordWrap": "on", // 换行
-  // "eslint.autoFixOnSave": true, // 每次保存都按eslint去修复
-  "eslint.lintTask.enable": true,
-  // 添加 vue 支持
-  // "eslint.validate": [
-  //   "javascript",
-  //   "javascriptreact",
-  //   {
-  //     "language": "vue",
-  //     "autoFix": true
-  //   }
-  // ],
-  // 给js-beautify-html设置属性隔断
+  "eslint.lintTask.enable": true, // 语法分析器
+  "search.followSymlinks": false, //关闭rg.exe进程 用cnpm导致会出现rg.exe占用内存很高
+  "editor.minimap.enabled": false, //关闭右侧快速预览
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", // 默认的终端
+  "git.enableSmartCommit": true, // 没有暂存更改的时候提交所有更改
+  "explorer.confirmDelete": false, // 控制资源管理器是否把文件删除到废纸篓时进行确认
+  "terminal.integrated.rendererType": "dom", // 控制终端的渲染方式，就是vscode的渲染方式
+  "diffEditor.ignoreTrimWhitespace": false, // 不忽略前导空格或尾随空格中的更改
+  "vsicons.dontShowNewVersionMessage": true, // 新版本消息将不再显示
+  "window.zoomLevel": 0, // 窗口缩放等级
+  "editor.formatOnSave": true, // 开启保存后即触发格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true // eslint配置项，保存时自动修复错误
+  },
+  // 让vetur使用vs自带的js格式化工具，以便在函数前面加个空格
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // 让vetur格式化.vue文件的template里面的html代码不换行
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {
-      "wrap_attributes": "force-aligned"
-      // "max_preserve_newlines": 0,// Maximum number of line breaks to be preserved in one chunk (0 disables)
+      "wrap_attributes": "aligned-multiple"
     },
-    "prettier": {
-      "singleQuote": true, // 格式化以单引号为主
-      "semi": false,
-      "printWidth": 250
+    "prettyhtml": {
+      "printWidth": 250,
+      "wrapAttributes": false
     }
   },
-  "prettier.eslintIntegration": true, // 让prettier使用eslint的代码格式进行校验,由于prettier还不识别vue,可以让prettier使用eslint的代码格式进行校验,prettier默认覆盖vscode格式化快捷键
-  "prettier.semi": false, //  声明结尾使用分号(默认true)
-  "prettier.printWidth": 250,
-  "prettier.singleQuote": true, //  使用带引号替代双引号
-  "prettier.arrowParens": "avoid", // 只有一个参数的箭头函数的参数是否带圆括号（默认avoid）
-  "prettier.jsxBracketSameLine": false, // 多行JSX中的>放置在最后一行的结尾，而不是另起一行（默认false）
-  "vetur.format.defaultFormatter.js": "vscode-typescript", // 默认格式化vue中的<script> region的方式,按编辑器自带的ts格式进行格式化
-  "vetur.format.defaultFormatter.html": "prettier", //默认格式化vue中的<template> region的方式,由于prettier不能格式化vue文件template  所以使用js-beautify-html格式化
-  // "vetur.format.scriptInitialIndent": true,// js默认偏移一个indent
-  // "vetur.format.styleInitialIndent": true,// style默认偏移一个indent
-  "editor.formatOnSave": true, // 开启保存后即触发格式化
-  "editor.minimap.enabled": false, //关闭右侧快速预览
-  // "files.autoSave": "afterDelay", // 文件自动保存
-  // "files.autoSaveDelay": 30000, // 文件自动保存延时
-  "search.followSymlinks": false, //关闭rg.exe进程 用cnpm导致会出现rg.exe占用内存很高
+  "javascript.format.semicolons": "remove",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "editor.tabSize": 2,
-  "editor.snippetSuggestions": "top",
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  // 指定 *.vue 文件的格式化工具为vetur
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
   },
+  // 指定 *.js 文件的格式化工具为vscode自带
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-    //   "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "git.enableSmartCommit": true,
-  "explorer.confirmDelete": false,
-  "terminal.integrated.rendererType": "dom",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "vsicons.dontShowNewVersionMessage": true,
-  "window.zoomLevel": 0 // 函数名后增加空格
+  // 默认使用prettier格式化支持的文件
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
