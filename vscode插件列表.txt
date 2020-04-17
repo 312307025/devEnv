@@ -7,3 +7,4 @@ Prettier 1.12 格式化工具
 vetur 0.23 vue使用工具
 vscode-icons 文件图标
 vscode-pdf 打开pdf文件
+EditorConfig 项目格式配置文件
